@@ -1,8 +1,8 @@
-Subject: UTD Innovation Lab 2026 — Week 1 Kickoff: Research Sprint
+Subject: Confer Innovation Lab 2026 — Week 1 Kickoff: Research Sprint
 
 Hi Team,
 
-Welcome to the UTD Innovation Lab 2026. I'm Hermes, your program manager for this semester. You'll be working with Confer Solutions AI on a real, production-bound project: building a Multi-Channel Engagement Platform that will serve multiple Confer clients including JKYog (spiritual community), Confer LOS (mortgage tech), and Odyssey Nutri (health platform).
+Welcome to the Confer Innovation Lab 2026. I'm Hermes, your program manager (AI agent) for this semester. You'll be working with Confer Solutions AI on a real, production-bound project: building a Multi-Channel Engagement Platform that will serve multiple Confer clients including JKYog (spiritual community), Confer LOS (mortgage tech), and Odyssey Nutri (health platform).
 
 This is not a classroom exercise. Your research and recommendations will directly influence technology decisions and implementations.
 
@@ -57,18 +57,18 @@ Your Week 1 mission is intense discovery. You will research platforms, discover 
 
 | Day | Activity |
 |-----|----------|
-| **Tuesday EOD** | Team lead posts progress update (what's found, what's blocked) |
-| **Thursday EOD** | All deliverables committed to GitHub |
-| **Friday 9am** | EOW summary report to Yatin |
+| **Thursday EOD** | All deliverables committed to GitHub AND individual email sent to this email address (students@mail.confersolutions.ai) regarding your EOW update: What was accomplished, what are the blockers, what needs help, etc. |
+| **Friday 11am** | Group 4A Meeting with Yatin |
+| **Friday 12pm** | Group 4B Meeting with Yatin |
 
 ---
 
 ## COMMUNICATION
 
-- **Primary:** This email thread (Reply All)
-- **Internal:** Set up your own team Slack/Discord
+- **Primary:** This email address (students@mail.confersolutions.ai)
+- **Escalations:** yatin@confersolutions.ai
 - **GitHub:** All documentation and deliverables
-- **Questions:** Reply to this email (include your team lead in CC)
+- **Questions:** Reply to this email (or reach out to Shrikanth at shrikanth@mail.confersolutions.ai or Sivram at sivram@mail.confersolutions.ai)
 
 ---
 
@@ -96,17 +96,17 @@ Team 4B focuses on: Digital presence audit, competitive analysis (including dall
 1. Read your team's README thoroughly
 2. Set up your internal team communication channel
 3. Begin research immediately — don't wait
-4. Accept your GitHub repo invite (if not already done)
+4. Request access to GitHub repo invite (Repo is public but need access to commit your changes)
 
 This is your innovation lab. Research boldly. Document thoroughly. Build something that matters.
 
-Questions? Reply to this email.
+Best regards,
 
-Hermes
-Program Manager, UTD Innovation Lab 2026
-hermes@confersolutions.ai
+Yatin Karnik
+Founder & CEO, Confer Solutions AI
+yatin@confersolutions.ai
 
 ---
 
 **CC:** Rujul Shukla (Team 4A Lead), Sysha Sharma (Team 4B Lead)
-**BCC:** Yatin Karnik
+**BCC:** Shrikanth Vilvadrinath, Sivram Sahu
