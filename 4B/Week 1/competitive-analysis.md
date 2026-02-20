@@ -1,192 +1,360 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
+## **Section 1: Basic Profile**
 
-# Task 2: Competitive Intelligence (JKYog / Radhakrishna Temple Dallas)
+|  | 1 | 2 | 3 | 4 |
+| :---- | :---- | :---- | :---- | :---- |
+| **Organization Name** | Karya Siddhi Hanuman Temple | Radha Kalachandji Temple Isckon | BAPS Swaminarayan Akshardham | Isha Institute of Inner Sciences |
+| **Type** (Local / National / Global) | Local | Local | National | Global |
+| **Target Audience** (Families / Youth / Devotees / Students) | Devotees, Families, Youth (Indian diaspora) | Devotees, Students, Youth, Spiritual seekers | Families, Devotees, Youth (structured community members) | Youth, Professionals, Spiritual seekers, Wellness-focused adults |
+| **Primary Geography** (Dallas / US / Global) | Dallas | Dallas | US | Global |
+| **Estimated Digital Maturity (1–5)** | 2.5 | 3.5 | 5 | 5 |
 
-[](https://github.com/confersolutions/utd-innovation-lab-2026/blob/main/4B/README.md#task-2-competitive-intelligence)
-Required competitors:
-Dallas Hanuman ([https://www.dallashanuman.org](https://www.dallashanuman.org/)) — detailed breakdown
-1 Local spiritual/temple organization — your choice
-1 National/global spiritual org with strong digital presence — your choice
-Find 1 NEW competitor they should be tracking — discover through research
-Deliverable: competitive-analysis.md
-Include for each:
-Channels used (website, WhatsApp status, SMS, email, app, social media, events)
-Content strategy analysis
-User engagement tactics
-Technology stack (if detectable)
-Strengths and weaknesses vs JKYog
+## **Section 2: Channel Presence (Binary \+ Quality Score)**
 
-Let's identify the 4 competitors to analyze. The first one is already given (Dallas Hanuman). I'm inclined to pick the second one as Isckon - Kalachandji temple, Dallas. Does that work? What about the third and fourth, help me identify those as well.
+| Channel | 1 | 2 | 3 | 4 |
+| :---- | :---- | :---- | :---- | :---- |
+| **Website** (0 Not present / 1 Present / 2 Well leveraged) | 2 | 2 | 2 | 2 |
+| **WhatsApp** (0 / 1 / 2\) | 1 | 1 | 1 | 0 |
+| **SMS** (0 / 1 / 2\) | 0 | 0 | 1 | 0 |
+| **Email** (0 / 1 / 2\) | 1 | 2 | 2 | 2 |
+| **Mobile App** (0 / 1 / 2\) | 0 | 1 | 2 | 2 |
+| **Instagram** (0 / 1 / 2\) | 1 | 1 | 2 | 2 |
+| **Facebook** (0 / 1 / 2\) | 2 | 2 | 2 | 2 |
+| **YouTube** (0 / 1 / 2\) | 1 | 2 | 2 | 2 |
+| **Events** (0 / 1 / 2\) | 2 | 2 | 2 | 2 |
+| **Livestream** (0 / 1 / 2\) | 1 | 2 | 2 | 2 |
+| **Channel Integration Score (1–5)** | 2 | 3 | 5 | 4.5 |
 
-Yes, ISKCON Dallas – Radha Kalachandji Temple is an excellent choice for your second (local) competitor, and it fits very cleanly into the “local spiritual/temple organization” slot.[^1_1][^1_2][^1_3]
+## **Section 3: Content Strategy Analysis**
 
-## Recommended set of 4 competitors
+|  | 1 | 2 | 3 | 4 |
+| :---- | :---- | :---- | :---- | :---- |
+| **Content Focus** (Bhakti / Youth / Philosophy / Festivals / Community / Education) | Bhakti, Festivals, Community | Bhakti, Philosophy, Festivals, Community | Bhakti, Youth, Education, Community, Global Events | Philosophy, Youth, Education, Global Festivals |
+| **Posting Frequency** (Low / Medium / High) | Medium | Medium-High | High | High |
+| **Content Formats** (Reels / Long-form / Email newsletters / Blog / Live sessions) | Event posts, flyers, some livestreams | Reels, kirtan videos, livestreams, newsletters | Reels, kirtan videos, livestreams, newsletters | Reels, cinematic YouTube, email campaigns, live mega-events |
+| **Brand Consistency (1–5)** | 2 | 3 | 5 | 5 |
+| **Visual Sophistication (1–5)** | 2 | 3 | 5 | 5 |
+| **Funnel Presence (Y/N)** | Y | Y | Y | Y |
+| **Donation Funnel Strength (1–5)** | 2 | 3 | 5 | 4.5 |
 
-Here’s a clean set that covers your assignment requirements and gives you good diversity for digital strategy comparisons:
+## **Section 4: Engagement & Community Strategy**
 
-1. **Dallas Hanuman Temple**
-    - Category: Local spiritual/temple org (given in prompt).
-    - Rationale: Strong local bhakti base, events-driven presence, Indian diaspora focus; good contrast with JKYog’s programmatic/education-heavy model.[^1_4]
-2. **ISKCON Dallas – Radha Kalachandji Temple**
-    - Category: Local spiritual/temple org (your choice).
-    - Why it works:
-        - Very recognizable brand (Hare Krishna) with a distinct lifestyle/culture (prasadam restaurant, gurukul, kirtan, etc.).[^1_5][^1_1]
-        - Active digital channels: website, YouTube channel, and Facebook presence you can benchmark (streaming kirtans, lectures, festivals).[^1_2][^1_3][^1_1]
-    - This is a solid “yes” for your Task 2 list.
-3. **DFW Hindu Temple – Youth Group / VV Temple** (as your second “local” lens)
-    - Category: Local spiritual/temple org, but with strong youth/community angle.
-    - Why it’s a good pick vs JKYog:
-        - Explicitly organized **youth group** with ~120 members, leadership roles (President, VP, etc.), and structured volunteering. That maps closely to JKYog’s SPARK, KAKE, Bal-Mukund, and youth club initiatives.[^1_6][^1_7]
-        - Lets you directly compare youth engagement, leadership pipelines, and how each org uses digital tools (site, email, maybe WhatsApp/Discord) to organize service and events.
-    - This gives you a “local + youth-centric” comparator that’s very relevant to JKYog’s positioning.
-4. **ISKCON global digital ecosystem** as the **national/global org with strong digital presence**
-    - Category: National/global spiritual org (strong digital).
-    - Why it fits:
-        - ISKCON as a movement has extensive online reach: live-streamed aratis and kirtans, global YouTube channels, podcasts, apps, online courses, and centralized content portals.[^1_8][^1_3]
-        - Strategically, JKYog is also global and content-driven (courses, lectures, youth programs), so comparing JKYog vs “global ISKCON digital” will be rich for:
-            - Content formats (shorts vs long pravachans vs courses).
-            - Platform mix (YouTube, Facebook, apps, OTT-style archives).
-            - Funnel from digital content → retreats, donations, and membership.
+|  | 1 | 2 | 3 | 4 |
+| :---- | :---- | :---- | :---- | :---- |
+| **Comments per Post (Avg. Est.)** | 5 to 20 | 15–50 | 50–300+ | 100–1000+ |
+| **Engagement Quality (1–5)** | 2 | 3 | 4.5 | 4 |
+| **Volunteer Funnel (Y/N)** | Y | Y | Y (Structured) | Y (Program-driven) |
+| **Event Registration System** (Manual / Form-based / Integrated) | Form-based | Form-based | Integrated | Integrated |
+| **Community Retention Mechanism** (WhatsApp / Email / App) | Email+WhatsApp | Email+WhatsApp | App+Email | App+Email |
+| **Youth Engagement Strategy (1–5)** | 2 | 3 | 5 | 5 |
 
-## Slot that remains “NEW competitor they should track”
+## **Section 5: Technology Stack (Detectable)**
 
-For the “1 NEW competitor they should be tracking,” you can frame **global ISKCON digital** as the “big, structured global benchmark,” but I’d actually suggest using that “NEW” tag for a digital-first spiritual brand such as **Go Spiritual India** (if you’re allowed to go India-based):
+|  | 1 | 2 | 3 | 4 |
+| :---- | :---- | :---- | :---- | :---- |
+| **CMS** (WordPress / Custom / Wix / Unknown) | WordPress (detectable) | WordPress (detectable) | Custom (enterprise architecture) | Custom (enterprise platform) |
+| **Email Tool** (Mailchimp / Constant Contact / Unknown) | N/A | N/A | N/A | N/A |
+| **CRM** (If detectable) | N/A | N/A | N/A | N/A |
+| **Donation Platform** (Stripe / Razorpay / Custom) | Stripe (detectable via checkout) | Stripe (detectable via checkout) | Custom integrated gateway | Custom integrated gateway |
+| **Event Platform** (Eventbrite / Custom / Form) | Form-based | Form-based | Custom integrated | Custom integrated |
+| **Analytics Tools** (Google Analytics / Meta Pixel) | Google Analytics | Google Analytics | Google Analytics \+ Meta Pixel | Google Analytics \+ Meta Pixel |
+| **Automation Maturity (1–5)** | 2 | 3 | 5 | 5 |
 
-- It is explicitly positioning itself at the intersection of spirituality and digital/tech (news magazine portal \& app, content hub, etc.).[^1_9]
-- That gives JKYog a look at a “spiritual media platform” model rather than just “temple + events.”
+**1️⃣ Dallas Hanuman Temple vs JKYog**
 
-**One workable mapping for your deliverable:**
+### **Sources:**
 
-- Competitor 1 (local temple): Dallas Hanuman Temple
-- Competitor 2 (local temple – your choice): ISKCON Dallas – Radha Kalachandji Temple
-- Competitor 3 (national/global digital): ISKCON Global Digital (Hare Krishna movement online)
-- Competitor 4 (NEW \& digital‑first): Go Spiritual India (or a similar digital‑native spiritual content platform)
-
-If you’d like, next we can lock this mapping to your professor’s wording, then I can outline the exact sections you should create inside `competitive-analysis.md` for each of the four (channels, content strategy, engagement tactics, tech stack, strengths/weaknesses vs JKYog).
-<span style="display:none">[^1_10]</span>
-
-<div align="center">⁂</div>
-
-[^1_1]: https://radhakalachandji.org
-
-[^1_2]: https://www.facebook.com/TexasKrishnas/
-
-[^1_3]: https://www.youtube.com/@iskcon-dallas
-
-[^1_4]: https://www.radhakrishnatemple.net/transforming-lives/community-outreach
-
-[^1_5]: https://www.dmagazine.com/publications/d-magazine/2019/september/the-wild-pursuit-of-bliss-inside-east-dallas-kalachandjis-temple/
-
-[^1_6]: https://www.radhakrishnatemple.net/transforming-lives/youth-programs
-
-[^1_7]: https://yg.dfwhindutemple.org
-
-[^1_8]: https://religionmediacentre.org.uk/analysis/how-digital-technology-became-sacred-for-hindus/
-
-[^1_9]: https://approachentertainment.com/go-spiritual-india-named-spiritual-partner-for-drivers-of-digital-awards-summit-2023/
-
-[^1_10]: https://www.scribd.com/document/733366985/Digital-Divine-Technology-use-by-Indian-Spiritual-Sects-1
-
+* Official website: [https://www.dallashanuman.org](https://www.dallashanuman.org)  
+* Facebook page (event promotion & engagement patterns)  
+* Public event announcements & donation pages
 
 ---
 
-# hmm, give me a list of top 5 temples in the US
+### **Strengths vs JKYog**
 
-Here are five widely recognized, high‑profile Hindu temples in the US that are often cited as major or “must‑visit” sites.[^2_1][^2_2][^2_3][^2_4]
+✅ **Strong local community focus**  
+Frequent in-person temple events (aarti, festivals, seva drives) centered around Dallas Hindu community.
 
-## 1. BAPS Swaminarayan Akshardham, Robbinsville NJ
+✅ **Clear temple identity**  
+Very straightforward devotional positioning (Hanuman-centered bhakti), which builds clarity in local audience.
 
-- Considered the largest Hindu temple in the United States, built by the BAPS Swaminarayan Sanstha.[^2_2][^2_3][^2_1]
-- Known for intricately carved stone architecture, large campus, and being a major pilgrimage and tourist attraction.[^2_1][^2_2]
-
-
-## 2. Malibu Hindu Temple, California
-
-- Located in Calabasas near Malibu, dedicated primarily to Lord Venkateswara.[^2_4][^2_1]
-- Frequently listed among the most popular US Hindu temples due to its scenic location and traditional South Indian style.[^2_4][^2_1]
-
-
-## 3. Sri Venkateswara Temple, Pittsburgh PA
-
-- One of the earliest major temples built by Indian immigrants in the US, modeled after Tirupati.[^2_5][^2_6][^2_1]
-- Important pilgrimage center, drawing devotees from across the country for its festivals and “Tirupati‑style” darshan.[^2_6][^2_1]
-
-
-## 4. Sri Maha Vallabha Ganapati Devasthanam, Flushing NY
-
-- Among the first traditional Hindu temples in the US and one of the most famous, dedicated to Lord Ganesha.[^2_7][^2_1]
-- Serves as a major cultural and religious hub for the New York Hindu community, with frequent events and services.[^2_7][^2_1]
-
-
-## 5. Sri Siva Vishnu Temple, Lanham MD
-
-- Large temple complex near Washington, D.C., covering about 27 acres.[^2_1]
-- Architecturally notable for combining multiple South Indian styles and for serving a broad regional devotee base.[^2_1]
-<span style="display:none">[^2_10][^2_8][^2_9]</span>
-
-<div align="center">⁂</div>
-
-[^2_1]: https://traveltriangle.com/blog/hindu-temples-in-usa/
-
-[^2_2]: https://usa.akshardham.org
-
-[^2_3]: https://en.wikipedia.org/wiki/List_of_largest_Hindu_temples
-
-[^2_4]: https://themandirstore.us/blogs/blogs/5-most-popular-hindu-temples-in-usa-you-must-visit
-
-[^2_5]: https://en.wikipedia.org/wiki/List_of_Hindu_temples_in_the_United_States
-
-[^2_6]: https://blog.dharmikvibes.com/p/hindu-temples-in-the-usa-a-guide-list
-
-[^2_7]: https://www.facebook.com/100064321376967/posts/10-popular-hindu-temples-in-america-you-should-visit-hindu-temples-in-the-united/958825902938113/
-
-[^2_8]: https://www.youtube.com/watch?v=z_1yzT58fyA
-
-[^2_9]: https://www.youtube.com/watch?v=klsQtxzKqtM
-
-[^2_10]: https://www.scribd.com/doc/184808063/List-of-Hindu-Temples-List-of-Hindu-Temples-in-Usa
-
+✅ **Simple donation integration**  
+Donation options clearly visible on website.
 
 ---
 
-# Karya Siddhi Hanuman Temple
+### **Weaknesses vs JKYog**
 
-Radha Kalachandji Temple Isckon
-BAPS Swaminarayan Akshardham
-Isha Institute of Inner Sciences
+❌ **Limited digital ecosystem**  
+Primarily website \+ Facebook. No visible app, structured online course funnel, or structured digital education ecosystem like JKYog.
 
-these are the final four I've picked. Now help me evaluate them. I will ask you a question and you will help me find the answer one by one, okay?
+❌ **Low content sophistication**  
+No polished YouTube strategy, minimal thought leadership, limited multi-format content (podcast/blog/structured courses).
 
-Yes, this set of four is very workable, and going one‑by‑one is a good approach.[^3_1][^3_2][^3_3][^3_4][^3_5]
+❌ **Weak funnel architecture**  
+No visible automation layers (CRM, email nurturing, segmented funnels).
 
-To confirm, we’ll analyze:
+---
 
-1. **Karya Siddhi Hanuman Temple** (Frisco, TX)[^3_6][^3_7][^3_4]
-2. **Radha Kalachandji Temple (ISKCON Dallas)**[^3_8][^3_9][^3_5]
-3. **BAPS Swaminarayan Akshardham, Robbinsville**[^3_10][^3_1]
-4. **Isha Institute of Inner-sciences, Tennessee**[^3_2][^3_3]
+### **Strategic Summary**
 
-Each time you ask a question (e.g., “What channels do they use?”, “What’s their content strategy?”), tell me which of the four you want to focus on, and I’ll answer specifically for that organization.
+Dallas Hanuman is **community-deep but digitally shallow**.  
+JKYog is **digitally layered and institutionally structured**.
 
-<div align="center">⁂</div>
+---
 
-[^3_1]: https://www.baps.org/Global-Network/North-America/Robbinsville.aspx
+## **2️⃣ Kalachandji's vs JKYog**
 
-[^3_2]: https://isha.sadhguru.org/en/center/isha-institute-inner-sciences-usa
+Sources:
 
-[^3_3]: https://isha.sadhguru.org/en/sadhguru/mission/isha-institute-inner-sciences
+[https://www.kalachandjis.com](https://www.kalachandjis.com/)  
+Public event listings and Sunday Feast announcements  
+Restaurant reservation and visitor information pages  
+Social media presence (Facebook / Instagram)  
+Affiliation references to ISKCON
 
-[^3_4]: https://en.wikipedia.org/wiki/Karya_Siddhi_Hanuman_Temple
+---
 
-[^3_5]: https://radhakalachandji.org
+### **Strengths vs JKYog**
 
-[^3_6]: https://www.yelp.com/biz/karya-siddhi-hanuman-temple-frisco
+Exceptional local brand visibility  
+Kalachandji’s is widely recognized in Dallas not only as a temple but also as a long-standing vegetarian restaurant destination, increasing walk-in exposure beyond strictly devotional audiences.
 
-[^3_7]: https://dallashanumanstore.org/store/Puja/Special-Pujas-and-Festivals/General
+Integrated lifestyle experience  
+The temple \+ restaurant model creates a holistic cultural environment that blends dining, spirituality, and community in one physical space.
 
-[^3_8]: https://www.mapquest.com/us/texas/radha-kalachandji-hare-krishna-temple-433400279
+Consistent weekly anchor event (Sunday Feast model)  
+Regular devotional gatherings with food, kirtan, and discourse provide predictable engagement cycles.
 
-[^3_9]: https://www.yelp.com/biz/radha-kalachandji-hare-krishna-temple-dallas
+Established Gaudiya Vaishnava lineage  
+Affiliation with ISKCON provides theological clarity, devotional continuity, and global spiritual alignment.
 
-[^3_10]: https://usa.akshardham.org
+Strong in-person community retention  
+Local devotees often return regularly due to proximity and cultural familiarity.
 
+---
+
+### **Weaknesses vs JKYog**
+
+Limited digital education structure  
+No visible structured online curriculum comparable to JKYog’s systematic spiritual education programs.
+
+Minimal conversion-optimized funnels  
+Website functions primarily as informational rather than funnel-driven (no layered onboarding sequences or structured program pathways publicly visible).
+
+Local geographic limitation  
+Brand authority is concentrated within Dallas; lacks broader national positioning comparable to JKYog’s multi-state presence.
+
+Lower digital content production scale  
+Less visible long-form lecture publishing, course cataloging, or systematic digital discourse library.
+
+Limited publicly detectable marketing automation  
+No clear signs of CRM-driven segmentation, automated nurture sequences, or behavioral tracking sophistication.
+
+---
+
+### **Strategic Summary**
+
+Kalachandji’s competes primarily as a strong local devotional and cultural hub anchored by experiential engagement.
+
+JKYog competes as a structured, program-driven spiritual education institution with broader geographic ambition and higher digital scalability.
+
+Kalachandji’s strength is physical community depth.  
+JKYog’s strength is institutional structure and scalable spiritual programming.
+
+# **3️⃣BAPS Swaminarayan vs JKYog**
+
+### **Sources:**
+
+* [https://www.baps.org](https://www.baps.org)  
+* BAPS Charities site  
+* Public reports on BAPS temple network  
+* Social media presence
+
+---
+
+### **Strengths vs JKYog**
+
+✅ **Exceptional organizational discipline**  
+Highly structured volunteer system.
+
+✅ **Massive infrastructure presence**  
+Iconic mandirs across US, UK, India.
+
+✅ **Strong youth programs (BAPS Yuvak/Yuvati Mandal)**  
+Highly institutionalized.
+
+✅ **High production quality events**  
+Professional-scale festivals and conferences.
+
+---
+
+### **Weaknesses vs JKYog**
+
+❌ **Less philosophical digital depth**  
+Less long-form spiritual discourse content online compared to JKYog’s lecture catalog.
+
+❌ **Heavily centralized doctrinal identity**  
+More sect-specific; JKYog sometimes positions broader bhakti appeal.
+
+❌ **Less aggressive digital funneling**  
+Strong offline network, less conversion-driven online marketing.
+
+# **4️⃣ Isha Institute of Inner Sciences vs JKYog**
+
+---
+
+## **📚 Sources Used**
+
+1. Official site — https://isha.sadhguru.org/us/en/center/isha-institute-inner-sciences  
+2. Isha Foundation official site — [https://isha.sadhguru.org](https://isha.sadhguru.org)  
+3. Inner Engineering program pages  
+4. Isha YouTube channel (subscriber scale & content strategy)  
+5. Public event registration flows  
+6. Isha volunteer pages  
+7. Public media coverage of Sadhguru events
+
+Everything below is based on publicly accessible material.
+
+---
+
+# **Strengths vs JKYog**
+
+### **✅ 1\. Extremely Strong Personal Brand Authority**
+
+Isha is built around Sadhguru, who has:
+
+* Massive global recognition  
+* High-profile interviews (UN, Davos, global forums)  
+* Large YouTube presence (millions of subscribers)
+
+👉 Compared to JKYog, Isha has significantly higher **global thought leadership visibility**.
+
+---
+
+### **✅ 2\. Highly Polished Digital Funnel Architecture**
+
+Isha runs structured, conversion-driven funnels for:
+
+* Inner Engineering (paid program)  
+* Retreat registrations  
+* Volunteer onboarding  
+* Donations  
+* Merchandise
+
+Clear CTAs across website:
+
+* “Register”  
+* “Join”  
+* “Volunteer”  
+* “Donate”
+
+👉 Their landing pages are optimized for global digital conversion.
+
+JKYog has educational structure — but Isha’s funnel sophistication is more productized and globally standardized.
+
+---
+
+### **✅ 3\. Scalable Flagship Product (Inner Engineering)**
+
+Inner Engineering functions like:
+
+* A spiritual SaaS product  
+* Tiered (online \+ in-person)  
+* Standardized curriculum  
+* Globally repeatable
+
+This creates:
+
+* Revenue predictability  
+* Funnel clarity  
+* Brand uniformity
+
+JKYog runs programs — but Isha’s packaging is more corporate-polished and globally consistent.
+
+---
+
+### **✅ 4\. Modern Aesthetic & Production Quality**
+
+* Cinematic event videos  
+* High-quality graphics  
+* Minimalist design system  
+* Consistent typography & visual brand
+
+Digital maturity is high.
+
+---
+
+### **✅ 5\. Global Environmental Positioning**
+
+Campaigns like:
+
+* Save Soil  
+* Rally for Rivers
+
+These create:
+
+* Political visibility  
+* Mainstream appeal  
+* Youth engagement beyond traditional religion
+
+JKYog is more spiritually devotional.  
+Isha expands into environmental activism branding.
+
+---
+
+# **Weaknesses vs JKYog**
+
+### **❌ 1\. Heavy Founder Dependency**
+
+Isha’s identity is extremely tied to Sadhguru.
+
+If brand perception shifts, organizational identity could be affected.
+
+JKYog is more institution-driven and scripture-centered, less personality-dependent.
+
+---
+
+### **❌ 2\. Less Traditional Bhakti Devotion Structure**
+
+Isha emphasizes:
+
+* Yoga  
+* Inner engineering  
+* Consciousness science
+
+Less focus on:
+
+* Temple-based bhakti  
+* Deity worship systems  
+* Traditional devotional practices
+
+For audiences seeking structured devotional theology, JKYog may feel more aligned.
+
+---
+
+### **❌ 3\. Premium Pricing Model**
+
+Many programs are paid and positioned as premium transformation offerings.
+
+This can:
+
+* Limit lower-income participation  
+* Create perception of commercialization
+
+JKYog offers more open devotional access.
+
+---
+
+### **❌ 4\. Lower Scriptural Depth in Digital Discourse**
+
+Compared to JKYog’s:
+
+* Bhagavad Gita discourses  
+* Structured theology
+
+Isha leans toward:
+
+* Philosophical \+ experiential narrative  
+* Motivational/spiritual science framing
+
+Audience seeking structured Sanskrit-based scripture study may prefer JKYog.
