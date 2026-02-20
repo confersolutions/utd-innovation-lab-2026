@@ -64,7 +64,7 @@ What we need:
 ---
 
 ## Pricing Model (how costs grow)
-We’re not calculating exact dollars yet — Week 1 focuses on model + scalability impact.
+
 
 | Tool | Pricing “shape” | What grows the bill? | Scalability takeaway |
 |---|---|---|---|
