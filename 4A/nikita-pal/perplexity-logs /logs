@@ -1,0 +1,90 @@
+# Task 4 – Goal and Findings
+
+## Goal of Task 4
+
+The goal of this task was to design and document a high-level integration architecture for a multi-channel AI chatbot system.
+
+This included:
+
+- Understanding how users from different platforms (web, WhatsApp, voice) interact with a centralized system.
+- Planning how the chatbot connects to backend systems such as events, donations, contact forms, and CRM.
+- Designing a shared architecture that supports multiple websites without duplicating logic.
+- Creating structured documentation that clearly explains the full system flow.
+
+This task focused on research, architectural planning, and documentation only. No implementation was performed.
+
+---
+
+## Key Findings
+
+### 1. Need for a Layered Architecture
+
+A scalable system requires clear separation of responsibilities.
+
+The architecture was divided into:
+
+- Users Layer
+- Channel Layer
+- Automation / Orchestration Layer
+- Bot Core Engine
+- Backend APIs Layer
+
+This separation ensures maintainability, scalability, and clarity in system design.
+
+---
+
+### 2. Shared Bot Core with Site Context Routing
+
+Instead of building separate bots for each website, a shared AI core can be used.
+
+The system dynamically routes responses based on the originating website context.  
+This allows:
+
+- Reuse of conversational logic
+- Separation of knowledge bases
+- Reduced duplication
+- Easier maintenance
+
+---
+
+### 3. Importance of Channel Abstraction
+
+Each platform communicates differently.
+
+To handle this, a Channel Layer is required that:
+
+- Converts incoming messages into a standardized format
+- Ensures consistent internal processing
+- Supports Web Chat, WhatsApp, and Voice input
+
+---
+
+### 4. Backend Integration is Essential
+
+The chatbot must perform real actions beyond answering questions.
+
+Required integrations include:
+
+- Events management
+- Donation processing
+- Contact form submission
+- Newsletter subscription
+- CRM integration
+
+These integrations allow the chatbot to connect with real operational systems.
+
+---
+
+### 5. Context Management is Required
+
+A session store is necessary to retain user context during conversations.
+
+This ensures the bot can understand follow-up inputs and maintain coherent multi-step interactions.
+
+---
+
+## Summary
+
+The goal was to design how the entire system connects across multiple platforms and backend services.
+
+The findings show that a centralized bot core, layered architecture, channel abstraction, and structured backend integration are essential for building a scalable and maintainable solution.
