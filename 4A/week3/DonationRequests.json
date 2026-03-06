@@ -20,7 +20,6 @@
     },
     "sponsor_info": {
       "node_id": "DR_3",
-      "node_id": "DR_3",
       "message": "Donations can be made in the form of sponsorship...",
       "options": [{"text": "Back", "next": "start"}]
     },
