@@ -1,5 +1,5 @@
 # Task 5: Conversation Analytics Specification (JKYog WhatsApp Bot)
-**Editor:** [Project Lead]  
+**Editor:** Harshith Bharathbhushan  
 **Team:** 4A — Conversational UX & Design  
 
 ---
