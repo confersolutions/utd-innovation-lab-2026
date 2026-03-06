@@ -1,7 +1,8 @@
 # Task 5: Conversation Analytics Specification (JKYog WhatsApp Bot)
-**Editor:** Harshith Bharathbhushan  
+**Owner:** Harshith Bharathbhushan  
 **Team:** 4A — Conversational UX & Design  
-**Project:** JKYog Multi-Channel Engagement Platform
+**Project:** JKYog Multi-Channel Engagement Platform  
+**Date:** March 6, 2026
 
 ---
 
@@ -15,13 +16,13 @@ The bot’s success will be evaluated against three primary categories of metric
 
 ### A. Business & Mission Success (ROI)
 * **Donation Conversion Rate:** Percentage of users who initiate a donation inquiry (`DR_1`) and progress to a successful sponsorship or tax receipt outcome.
-* **Event Registration Volume:** Total successful sign-ups captured via the `VI_4` and `VI_6` interaction paths.
+* **Event Registration Volume:** Total successful sign-ups captured via the `VI_4` (Upcoming Events) and `VI_6` (Event Details) interaction paths.
 * **Volunteer Lead Generation:** Number of users successfully expressing interest in volunteer opportunities via the FAQ/Inquiry flows.
 
 ### B. User Engagement & UX Quality
-* **Goal Completion Rate (GCR):** Percentage of users who reach the final resolution nodes (e.g., `VI_9` or successful receipt confirmation).
+* **Goal Completion Rate (GCR):** Percentage of users who reach the final resolution nodes (e.g., `VI_9` for inquiries or successful receipt confirmation).
 * **Average Session Depth:** The mean number of message exchanges per session, indicating the richness of user engagement.
-* **Language Adoption Trends:** Tracking `record_lang_switch` events (from Nikita's logic) to identify demand for Hindi and Gujarati content.
+* **Language Adoption Trends:** Tracking `record_lang_switch` events (from Nikita's logic) to identify demand for English, Hindi, and Gujarati content.
 
 ### C. Technical Reliability & Resilience
 * **Fallthrough Rate:** Frequency of `log_intent_fail` events relative to total interactions.
@@ -36,10 +37,12 @@ Using the `node_id` architecture established in the team's JSON files, we track 
 | Target Funnel | Entry Node | Key Milestone Checkpoint | Success/End Node |
 | :--- | :--- | :--- | :--- |
 | **Donations** | `node_id: DR_1` | `node_id: DR_3` (Sponsorship) | `goal_reached_donations` |
-| **Visitor Inquiries** | `node_id: VI_1` | `node_id: VI_4` (Events) | `node_id: VI_9` (End) |
+| **Visitor Inquiries** | `node_id: VI_1` | `node_id: VI_2` (Timings) | `node_id: VI_9` (End) |
 | **Directions** | `node_id: TD_1` | `node_id: TD_4` (Parking) | `goal_reached_directions` |
 
-**Abandonment Strategy:** If data shows high traffic at `DR_1` but a 50% drop-off before `DR_2` (Make a Donation), we will flag the "Start" node for content optimization to improve user motivation and CTA clarity.
+
+
+**Abandonment Strategy:** If data shows high traffic at `DR_1` but a significant drop-off before `DR_2` (Make a Donation), we will flag the "Start" node for content optimization to improve user motivation and CTA clarity.
 
 ---
 
@@ -56,7 +59,7 @@ This analytics framework is operationalized through the following "Data Hooks" p
 
 1. **Unique State IDs (Rujul):** All decision nodes (Inquiries, Directions, Donations) use specific `node_id` prefixes (`DR_`, `VI_`, `TD_`) for granular path tracking.
 2. **Metadata Logging (Ananth):** The state machine logs `session_id`, `user_id`, `detected_intent`, and `communication_channel` at every state transition.
-3. **Fallback Telemetry (Chanakya):** Specific fallback scenarios emit unique event logs (`log_intent_fail`, `log_fallback_timeout`, `log_context_loss`) for technical debugging.
+3. **Fallback Telemetry (Chanakya):** Five specific fallback scenarios emit unique event logs (`log_intent_fail`, `log_fallback_timeout`, `log_context_loss`, `log_human_escalation_fail`) for technical debugging.
 4. **Localization Tracking (Nikita):** Language switches capture the `source` and `target` languages, enabling linguistic preference mapping across the devotee community.
 
 ---
