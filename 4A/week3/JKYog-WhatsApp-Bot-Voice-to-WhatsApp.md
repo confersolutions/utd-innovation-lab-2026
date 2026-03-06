@@ -1,4 +1,4 @@
-# JKYog-WhatsApp-Bot-Voice-to-WhatsApp
+# JKYog WhatsApp Bot Voice to WhatsApp
 Owner: Chanakya Alluri  
 Due: March 6, 2026 (11:59 PM CST)
 
