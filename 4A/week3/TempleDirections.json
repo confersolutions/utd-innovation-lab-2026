@@ -61,8 +61,8 @@
         "message": "Free parking is available at the temple parking lot. The main parking lot entrance is located on North Watters Rd, just north of Bossy Boots Drive intersection. Overflow parking is located at the Watters Montessori next door to the temple along Bossy Boots Dr. No overnight parking is permitted on temple grounds.",
         "options": [
           {
-            "text": "Public Transportation",
-            "next": "public_transit"
+            "text": "Wheelchair & Mobility Accessibility",
+            "next": "accessibility"
           },
           {
             "text": "Back",
