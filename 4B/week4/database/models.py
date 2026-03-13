@@ -59,6 +59,6 @@ def get_db() -> Generator[Session, None, None]:
 
 def init_db() -> None:
     """Create all database tables registered on the SQLAlchemy metadata."""
-    from database import schema  # noqa: F401
+    from . import schema  # noqa: F401
 
     Base.metadata.create_all(bind=engine)
