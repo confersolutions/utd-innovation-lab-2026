@@ -16,12 +16,12 @@ from fastapi import Depends, FastAPI, HTTPException, Request
 from fastapi.responses import JSONResponse
 from sqlalchemy.orm import Session
 
-from authentication.auth import verify_whatsapp_request
-from authentication.session_manager import update_session_context
-from bot.intent_classifier import classify_intent
-from bot.response_builder import build_response
-from database.models import get_db, init_db
-from database.state_tracking import log_message
+from .authentication.auth import verify_whatsapp_request
+from .authentication.session_manager import update_session_context
+from .bot.intent_classifier import classify_intent
+from .bot.response_builder import build_response
+from .database.models import get_db, init_db
+from .database.state_tracking import log_message
 
 
 logging.basicConfig(
