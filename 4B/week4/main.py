@@ -136,13 +136,16 @@ async def whatsapp_webhook(
                 classify_err,
             )
 
-        log_message(
-            db=db,
-            conversation_id=conversation.id,
-            direction="inbound",
-            text=user_message,
-            intent=inbound_intent,
-        )
+        try:
+            log_message(
+                db=db,
+                conversation_id=conversation.id,
+                direction="inbound",
+                text=user_message,
+                intent=inbound_intent,
+            )
+        except Exception as log_err:
+            logger.warning("Failed to log inbound message: %s", log_err)
 
         # Build response from bot core
         user_context: Dict[str, Any] = {
@@ -162,8 +165,14 @@ async def whatsapp_webhook(
         # Send the reply back to the user on WhatsApp via Twilio
         try:
             send_whatsapp_message(to=phone_number, body=bot_reply)
+            logger.info("WhatsApp message sent to %s", phone_number)
         except Exception as send_err:
-            logger.error("Failed to send WhatsApp message: %s", send_err)
+            logger.error(
+                "Failed to send WhatsApp message to %s: %s",
+                phone_number,
+                send_err,
+                exc_info=True,
+            )
 
         # Update session context with latest interaction
         try:
@@ -180,13 +189,16 @@ async def whatsapp_webhook(
             logger.warning("Session context update failed: %s", session_err)
 
         # Log outbound message
-        log_message(
-            db=db,
-            conversation_id=conversation.id,
-            direction="outbound",
-            text=bot_reply,
-            intent=inbound_intent,
-        )
+        try:
+            log_message(
+                db=db,
+                conversation_id=conversation.id,
+                direction="outbound",
+                text=bot_reply,
+                intent=inbound_intent,
+            )
+        except Exception as log_err:
+            logger.warning("Failed to log outbound message: %s", log_err)
 
         logger.info(
             "Response generated | user_id=%s | conversation_id=%s",
