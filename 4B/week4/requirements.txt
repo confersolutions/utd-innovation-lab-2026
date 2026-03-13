@@ -1,0 +1,11 @@
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+
+# Bot core dependencies (align with Week 3 intent classifier / response builder)
+python-dotenv>=1.0.0
+openai>=1.0.0
+numpy>=1.26.0
+
+# If you use Twilio helper libs elsewhere, uncomment:
+# twilio>=9.0.0
+
