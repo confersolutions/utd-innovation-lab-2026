@@ -2,13 +2,12 @@
 
 ## Overview
 
-The WhatsApp bot for the JKYog channel is a FastAPI-based conversational assistant. It is designed to support temple visitors through a WhatsApp bot that processes incoming messages and authenticates users through phone numbers. This bot also manages conversations and sessions and retrieves relevant information from a knowledge base to return responses using structured bot logic. 
+The JKYog WhatsApp Bot is a FastAPI-based conversational assistant that processes incoming Twilio WhatsApp webhook requests, authenticates users by phone number, manages sessions, logs conversations, and generates responses using bot logic, a knowledge base, and external integrations.
 
-Multiple components are integrated including authentication, session management, database logging, knowledge base retrieval and external API integrations like Google Maps/Calendar and Stripe donation links. 
 ## Key Features
 - FastAPI-based backend architecture
 
-- WhatsApp webhook message handling
+- Twilio WhatsApp webhook message handling
 
 - Phone-number-based user authentication
 
@@ -68,6 +67,8 @@ Multiple components are integrated including authentication, session management,
 ```
 WhatsApp User
       ↓
+Twilio WhatsApp Webhook
+      ↓
 POST /webhook/whatsapp
       ↓
 FastAPI Application (main.py)
@@ -98,6 +99,7 @@ Before running the application, the following must be installed:
 - Git
 - Virtual environment tool(venv)
 - Access to required API credentials
+- Twilio-compatible WhatsApp webhook testing setup
 ## Setup Instructions
 ### 1. Clone the repository
 - git clone https://github.com/ConferInc/utd-innovation-lab-2026.git
@@ -114,17 +116,24 @@ Before running the application, the following must be installed:
 - pip install --upgrade pip
 - pip install -r 4B/week4/requirements.txt
 ## Environment Variables
-Create a .env file in the project root and configure the following variables.
 
-- DATABASE_URL=
-- LOG_LEVEL=INFO
-- GOOGLE_MAPS_API_KEY=
-- STRIPE_DEFAULT_LINK=
-- STRIPE_DALLAS_LINK=
-- STRIPE_IRVING_LINK=
-- STRIPE_HOUSTON_LINK=
-- GOOGLE_CALENDAR_SERVICE_ACCOUNT_JSON
-- GOOGLE_CALENDAR_ID=primary
+Create a `.env` file in the project root and configure the following:
+
+```env
+DATABASE_URL=
+LOG_LEVEL=INFO
+
+GOOGLE_MAPS_API_KEY=
+
+STRIPE_DEFAULT_LINK=
+STRIPE_DALLAS_LINK=
+STRIPE_IRVING_LINK=
+STRIPE_HOUSTON_LINK=
+
+GOOGLE_CALENDAR_SERVICE_ACCOUNT_JSON=
+GOOGLE_CALENDAR_ID=primary
+```
+
 
 These variables configure database access and external integrations used by the bot.
 ## How to Run Locally
@@ -143,21 +152,15 @@ The app should be available at:
 - POST /webhook/whatsapp → main WhatsApp webhook endpoint
 ## WhatsApp Webhook Flow
 
-- Twilio sends a form-encoded WhatsApp webhook request.
-
-- The app extracts the sender phone number, profile name, and message body.
-
-- The user is authenticated by phone number.
-
-- The session is validated or a new one is generated.
-
-- The inbound message is logged in the database.
-
-- Intent is classified and a response is generated.
-
-- Session state is updated.
-
-- The outbound response is logged and returned as JSON.
+1. Twilio sends a form-encoded WhatsApp webhook request to `POST /webhook/whatsapp`.
+2. The app reads the `From`, `Body`, and `ProfileName` fields from the request payload.
+3. The sender phone number is normalized by removing the `whatsapp:` prefix.
+4. The user is authenticated by phone number and linked to an active conversation.
+5. If an `X-Session-Token` header is present and valid, the existing session is reused; otherwise a new session is created.
+6. The inbound message is logged in the database.
+7. Intent classification and response generation are performed by the bot layer.
+8. The session context is updated and the outbound response is logged.
+9. The API returns a JSON response containing the generated bot reply.
 ## Integrations
 
 ### Google Maps
@@ -169,7 +172,7 @@ The app should be available at:
 ### Stripe
 - Used to return pre-configured Stripe donation links for temple locations.
 ## Deployment (Render)
-The application can be deployed using Render. The project includes a `render.yaml` file that defines the service configuration.
+The Render deployment uses `4B/week4/requirements.txt`, which includes FastAPI, SQLAlchemy, Twilio, `python-multipart`, Google API packages, and Stripe dependencies required for the integrated bot to run successfully.
 
 ### Build Command
 - pip install --upgrade pip
