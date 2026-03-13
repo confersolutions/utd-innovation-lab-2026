@@ -10,5 +10,5 @@ services:
       uvicorn 4B.week4.main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: PYTHON_VERSION
-        value: 3.11
+        value: 3.11.0
 
