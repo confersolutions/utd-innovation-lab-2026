@@ -220,68 +220,65 @@ def handle_unknown(user_message: str) -> str:
     return response
 
 
-def build_response(user_message: str, user_context: Optional[Dict] = None) -> str:
+def build_response(
+    user_message: str,
+    user_context: Optional[Dict] = None,
+    intent: Optional[str] = None,
+    confidence: Optional[float] = None,
+) -> str:
     """
     Build complete bot response by orchestrating the full pipeline.
-    
+
     Pipeline:
-    1. Classify intent
+    1. Classify intent (skipped if intent is passed in)
     2. Extract entities
     3. Route to appropriate handler
     4. Format response for WhatsApp
-    
+
     Args:
-        user_message: The user's input message
+        user_message: The user's input message.
         user_context: Optional context (user_id, conversation_id, etc.)
-    
+        intent: Pre-classified intent — if provided, skips the classify call.
+        confidence: Confidence score matching the pre-classified intent.
+
     Returns:
-        Formatted response string ready for WhatsApp
-    
-    Example:
-        >>> build_response("Where is the temple?")
-        "📚 The JKYog Radha Krishna Temple is located in Allen, Texas at..."
+        Formatted response string ready for WhatsApp.
     """
     if not user_message or not user_message.strip():
         return handle_unknown(user_message)
-    
+
     try:
-        # Step 1: Classify intent
-        intent_result = classify_intent(user_message)
-        intent = intent_result["intent"]
-        confidence = intent_result["confidence"]
-        
-        # Log for debugging (in production, log to database)
+        # Use pre-classified intent if provided, otherwise classify now
+        if intent is None:
+            intent_result = classify_intent(user_message)
+            intent = intent_result["intent"]
+            confidence = intent_result["confidence"]
+
+        confidence = confidence or 0.0
+
         print(f"Intent: {intent}, Confidence: {confidence:.2f}")
-        
-        # Step 2: Extract entities
+
         entities = extract_entities(user_message, intent)
         print(f"Entities: {entities}")
-        
-        # Step 3: Route to handler based on intent
+
         if intent == "greeting":
             response = handle_greeting(user_context)
-        
         elif intent == "faq_query":
             response = handle_faq_query(user_message, entities)
-        
         elif intent == "event_query":
             response = handle_event_query(user_message, entities)
-        
         elif intent == "donation_request":
             response = handle_donation(entities)
-        
         elif intent == "directions_request":
             response = handle_directions(user_message, entities)
-        
-        else:  # unknown intent
+        else:
             response = handle_unknown(user_message)
-        
-        # Add confidence disclaimer for medium confidence
-        if 0.3 <= confidence < 0.7 and intent != "unknown":
+
+        if 0.4 <= confidence < 0.75 and intent != "unknown":
             response += "\n\n---\nIf this isn't what you were looking for, please rephrase your question or contact us at (469) 606-3119."
-        
+
         return response
-    
+
     except Exception as e:
         print(f"Error in build_response: {e}")
         return "I'm experiencing technical difficulties. Please try again or contact the temple at (469) 606-3119."

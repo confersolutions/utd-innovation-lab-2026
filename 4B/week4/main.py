@@ -126,23 +126,25 @@ async def whatsapp_webhook(
             conversation.id,
         )
 
-        # Log inbound message with optional pre-classified intent
         inbound_intent: Optional[str] = None
+        inbound_confidence: Optional[float] = None
         try:
-            inbound_intent = classify_intent(user_message).get("intent")
+            intent_result = classify_intent(user_message)
+            inbound_intent = intent_result.get("intent")
+            inbound_confidence = intent_result.get("confidence")
         except Exception as classify_err:
-            logger.warning(
-                "Intent classification failed before logging: %s",
-                classify_err,
-            )
+            logger.warning("Intent classification failed: %s", classify_err)
 
-        log_message(
-            db=db,
-            conversation_id=conversation.id,
-            direction="inbound",
-            text=user_message,
-            intent=inbound_intent,
-        )
+        try:
+            log_message(
+                db=db,
+                conversation_id=conversation.id,
+                direction="inbound",
+                text=user_message,
+                intent=inbound_intent,
+            )
+        except Exception as log_err:
+            logger.warning("Failed to log inbound message: %s", log_err)
 
         # Build response from bot core
         user_context: Dict[str, Any] = {
@@ -157,13 +159,19 @@ async def whatsapp_webhook(
         bot_reply = build_response(
             user_message=user_message,
             user_context=user_context,
+            intent=inbound_intent,
+            confidence=inbound_confidence,
         )
 
         # Send the reply back to the user on WhatsApp via Twilio
         try:
             send_whatsapp_message(to=phone_number, body=bot_reply)
+            logger.info("WhatsApp message sent to %s", phone_number)
         except Exception as send_err:
-            logger.error("Failed to send WhatsApp message: %s", send_err)
+            logger.error(
+                "Failed to send WhatsApp message to %s: %s",
+                phone_number, send_err, exc_info=True,
+            )
 
         # Update session context with latest interaction
         try:
@@ -180,13 +188,16 @@ async def whatsapp_webhook(
             logger.warning("Session context update failed: %s", session_err)
 
         # Log outbound message
-        log_message(
-            db=db,
-            conversation_id=conversation.id,
-            direction="outbound",
-            text=bot_reply,
-            intent=inbound_intent,
-        )
+        try:
+            log_message(
+                db=db,
+                conversation_id=conversation.id,
+                direction="outbound",
+                text=bot_reply,
+                intent=inbound_intent,
+            )
+        except Exception as log_err:
+            logger.warning("Failed to log outbound message: %s", log_err)
 
         logger.info(
             "Response generated | user_id=%s | conversation_id=%s",
