@@ -16,6 +16,9 @@ alembic>=1.13.0
 # Twilio (if you call Twilio APIs directly)
 twilio>=8.10.0
 
+# Stripe (payment intents; donation links are URL-only)
+stripe>=8.0.0
+
 # Google Maps / Calendar integrations
 googlemaps>=4.10.0
 google-auth>=2.0.0

@@ -12,6 +12,10 @@ import os
 from contextlib import asynccontextmanager
 from typing import Any, Dict, Optional
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 from fastapi import Depends, FastAPI, HTTPException, Request
 from fastapi.responses import JSONResponse
 from sqlalchemy.orm import Session
@@ -50,6 +54,13 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+# Integration clients for test/demo endpoints (Subodh)
+from .integrations import StripeIntegration, GoogleMapsIntegration, GoogleCalendarIntegration
+
+stripe_client = StripeIntegration()
+maps_client = GoogleMapsIntegration()
+calendar_client = GoogleCalendarIntegration()
+
 
 def send_whatsapp_message(to: str, body: str) -> None:
     """Send a text message to a WhatsApp user via Twilio."""
@@ -79,6 +90,25 @@ def root() -> Dict[str, str]:
     Root endpoint to confirm the bot is running.
     """
     return {"message": "JKYog WhatsApp Bot is running"}
+
+
+@app.post("/create-payment")
+def create_payment() -> Dict[str, Any]:
+    """Create a Stripe payment intent (demo). Returns client_secret for client-side confirm."""
+    intent = stripe_client.create_payment_intent(amount=1000)
+    return {"client_secret": getattr(intent, "client_secret", None)}
+
+
+@app.get("/maps")
+def maps_test() -> Any:
+    """Test Google Maps geocode (Dallas)."""
+    return maps_client.geocode("Dallas")
+
+
+@app.get("/calendar")
+def calendar_test() -> Any:
+    """Test Google Calendar / KB upcoming events."""
+    return calendar_client.list_events()
 
 
 @app.post("/webhook/whatsapp")
