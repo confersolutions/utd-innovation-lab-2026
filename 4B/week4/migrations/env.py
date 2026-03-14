@@ -22,8 +22,20 @@ week4_dir = script_location.parent
 if str(week4_dir) not in sys.path:
     sys.path.insert(0, str(week4_dir))
 
-from database.models import Base
-import database.schema  # noqa: F401 - register all models with Base.metadata
+# Prefer the already-loaded module from the running FastAPI app so we don't
+# create a second SQLAlchemy engine (and leak a second connection pool).
+_models = (
+    sys.modules.get("4B.week4.database.models")
+    or sys.modules.get("database.models")
+)
+if _models:
+    Base = _models.Base
+    # Ensure schema models are registered with this Base.
+    if "4B.week4.database.schema" not in sys.modules and "database.schema" not in sys.modules:
+        import database.schema  # noqa: F401
+else:
+    from database.models import Base
+    import database.schema  # noqa: F401 - register all models with Base.metadata
 
 # Set sqlalchemy.url from DATABASE_URL so we don't hardcode in alembic.ini.
 db_url = os.getenv("DATABASE_URL")

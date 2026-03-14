@@ -29,7 +29,7 @@ def upgrade() -> None:
         sa.Column("created_at", sa.DateTime(), nullable=False),
         sa.PrimaryKeyConstraint("id", name=op.f("pk_users")),
     )
-    op.create_index(op.f("ix_phone_number"), "users", ["phone_number"], unique=True)
+    op.create_index(op.f("ix_users_phone_number"), "users", ["phone_number"], unique=True)
 
     op.create_table(
         "conversations",
@@ -46,7 +46,7 @@ def upgrade() -> None:
         ),
         sa.PrimaryKeyConstraint("id", name=op.f("pk_conversations")),
     )
-    op.create_index(op.f("ix_status"), "conversations", ["status"], unique=False)
+    op.create_index(op.f("ix_conversations_status"), "conversations", ["status"], unique=False)
 
     op.create_table(
         "messages",
@@ -83,18 +83,18 @@ def upgrade() -> None:
         sa.PrimaryKeyConstraint("id", name=op.f("pk_session_state")),
     )
     op.create_index(
-        op.f("ix_session_token"), "session_state", ["session_token"], unique=True
+        op.f("ix_session_state_session_token"), "session_state", ["session_token"], unique=True
     )
-    op.create_index(op.f("ix_is_active"), "session_state", ["is_active"], unique=False)
+    op.create_index(op.f("ix_session_state_is_active"), "session_state", ["is_active"], unique=False)
 
 
 def downgrade() -> None:
     # Drop in reverse dependency order: messages, then conversations and session_state, then users.
-    op.drop_index(op.f("ix_is_active"), table_name="session_state")
-    op.drop_index(op.f("ix_session_token"), table_name="session_state")
+    op.drop_index(op.f("ix_session_state_is_active"), table_name="session_state")
+    op.drop_index(op.f("ix_session_state_session_token"), table_name="session_state")
     op.drop_table("session_state")
     op.drop_table("messages")
-    op.drop_index(op.f("ix_status"), table_name="conversations")
+    op.drop_index(op.f("ix_conversations_status"), table_name="conversations")
     op.drop_table("conversations")
-    op.drop_index(op.f("ix_phone_number"), table_name="users")
+    op.drop_index(op.f("ix_users_phone_number"), table_name="users")
     op.drop_table("users")
