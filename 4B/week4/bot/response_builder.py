@@ -15,7 +15,8 @@ from .intent_classifier import classify_intent
 from .entity_extractor import extract_entities
 
 try:
-    import google.generativeai as genai
+    from google import genai
+    from google.genai import types as genai_types
     _GOOGLE_AVAILABLE = True
 except ImportError:
     _GOOGLE_AVAILABLE = False
@@ -74,15 +75,16 @@ def _generate_with_gemini(user_message: str, context: str) -> str | None:
     if not _GOOGLE_AVAILABLE or not os.getenv("GOOGLE_API_KEY"):
         return None
     try:
-        genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
-        model = genai.GenerativeModel(
-            os.getenv("GEMINI_MODEL", "gemini-2.5-flash"),
-            system_instruction=_BOT_SYSTEM_PROMPT,
-        )
+        client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
         prompt = f"Context:\n{context}\n\nUser message: {user_message}"
-        response = model.generate_content(
-            prompt,
-            generation_config={"temperature": 0.4, "max_output_tokens": 400},
+        response = client.models.generate_content(
+            model=os.getenv("GEMINI_MODEL", "gemini-2.5-flash"),
+            contents=prompt,
+            config=genai_types.GenerateContentConfig(
+                system_instruction=_BOT_SYSTEM_PROMPT,
+                temperature=0.4,
+                max_output_tokens=400,
+            ),
         )
         return response.text.strip()
     except Exception as exc:

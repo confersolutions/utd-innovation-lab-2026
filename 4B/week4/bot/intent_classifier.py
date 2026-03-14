@@ -13,16 +13,13 @@ from typing import Dict
 from dotenv import load_dotenv
 
 try:
-    import google.generativeai as genai
+    from google import genai
+    from google.genai import types as genai_types
     GOOGLE_AVAILABLE = True
 except ImportError:
     GOOGLE_AVAILABLE = False
 
 load_dotenv()
-
-_model = None
-if GOOGLE_AVAILABLE and os.getenv("GOOGLE_API_KEY"):
-    genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 _SYSTEM_PROMPT = """You are an intent classifier for a WhatsApp bot for JKYog Radha Krishna Temple.
 
@@ -68,13 +65,15 @@ def _classify_with_gemini(user_message: str) -> Dict[str, object] | None:
     if not GOOGLE_AVAILABLE or not os.getenv("GOOGLE_API_KEY"):
         return None
     try:
-        model = genai.GenerativeModel(
-            os.getenv("GEMINI_MODEL", "gemini-2.5-flash"),
-            system_instruction=_SYSTEM_PROMPT,
-        )
-        response = model.generate_content(
-            user_message,
-            generation_config={"temperature": 0, "max_output_tokens": 60},
+        client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
+        response = client.models.generate_content(
+            model=os.getenv("GEMINI_MODEL", "gemini-2.5-flash"),
+            contents=user_message,
+            config=genai_types.GenerateContentConfig(
+                system_instruction=_SYSTEM_PROMPT,
+                temperature=0,
+                max_output_tokens=60,
+            ),
         )
         raw = response.text.strip()
         result = json.loads(raw)

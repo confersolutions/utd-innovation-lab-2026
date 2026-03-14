@@ -38,12 +38,8 @@ async def lifespan(app: FastAPI):
     Initializes the database before serving requests.
     """
     logger.info("Initializing database...")
-    try:
-        init_db()
-        logger.info("Database initialized successfully.")
-    except Exception as exc:  # pragma: no cover - defensive logging
-        logger.error("Database initialization failed: %s", exc)
-        # Continue running so non-DB paths can still function if needed.
+    init_db()
+    logger.info("Database initialized successfully.")
     yield
     logger.info("Application shutdown complete.")
 
@@ -146,7 +142,7 @@ async def whatsapp_webhook(
                 intent=inbound_intent,
             )
         except Exception as log_err:
-            logger.warning("Failed to log inbound message: %s", log_err)
+            logger.error("Failed to log inbound message: %s", log_err, exc_info=True)
 
         # Build response from bot core
         user_context: Dict[str, Any] = {
@@ -187,7 +183,7 @@ async def whatsapp_webhook(
                 },
             )
         except Exception as session_err:
-            logger.warning("Session context update failed: %s", session_err)
+            logger.error("Session context update failed: %s", session_err, exc_info=True)
 
         # Log outbound message
         try:
@@ -199,7 +195,7 @@ async def whatsapp_webhook(
                 intent=inbound_intent,
             )
         except Exception as log_err:
-            logger.warning("Failed to log outbound message: %s", log_err)
+            logger.error("Failed to log outbound message: %s", log_err, exc_info=True)
 
         logger.info(
             "Response generated | user_id=%s | conversation_id=%s",
